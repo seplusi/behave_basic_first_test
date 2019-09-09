@@ -7,11 +7,8 @@ def before_scenario(context, scenario):
     print('Before scenario')
 
     if 'UI' in scenario.name:
-        options = webdriver.ChromeOptions()
-        options.add_argument("--start-maximized")
-
         # create a new Firefox session
-        context.driver = webdriver.Chrome(executable_path="/home/luis/Documents/chromedriver", chrome_options=options)
+        context.driver = webdriver.Safari()
         context.driver.implicitly_wait(30)
         # driver.maximize_window()
 
